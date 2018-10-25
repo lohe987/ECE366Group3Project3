@@ -314,9 +314,9 @@ while i < len(instruction_Memory):
             else:
                  instruction_Memory[i] = instruction_Memory[i].replace('beqR0 111', 'Halt')
             if (register[0] == 0):
-                i
+                i = i + 2**im - 1
             else:
-                i = i - 2**im -1
+                i
     else:
         print("Unknown instruction:" + instruction_Memory[i])
         instruction_Count = instruction_Count - 1
