@@ -34,7 +34,12 @@
 00101001
 00101001
 00101001
-00011000 #10 is now in memory location 0x0002
+00101001
+00101001
+00101001
+00101001
+00101001
+00011000 #5 is now in memory location 0x0002
 
 01010000 #set $r0 to memory location 0x0000
 00001000 #pull 6 back out from memory
@@ -69,26 +74,19 @@
 01110010 #jump back 4 spaces
 
 00101101 #register 3 sub 1
-00101101 #reset r3 back to 0
-01010000 #init r0 to 0
 01001101 #register 3 add 1
 01001101 #register 3 add 1
 01001101 #register 3 add 1
-01001101 #register 3 add 1
-01000011 # add register 0 and register 3
-00010100 #store product of 6 times larger number in 0x0003
-01010000 #init r0 to 0
+00010111 #store product of 6 times larger number in 0x0003
 00101101 #register 3 sub 1
 00101101 #register 3 sub 1
 00101101 #register 3 sub 1
 01001101 #register 3 add 1
 01001101 #register 3 add 1
-01000011 #set r0 to memory location 0x0002
-00000100 #$r1 is now equal to 10
+00000111 #$r1 is now equal to 10
 00101101 #register 3 sub 1
 00101101 #register 3 sub 1
 01001101 #register 3 add 1
-00110111 #check to see if counter is less than 1
 00100111 #subtract register 3 from register 1
 00101101 #register 3 sub 1
 01001101 #register 3 add 1
@@ -97,7 +95,6 @@
 #reset
 00101101 #register 3 sub 1
 00101101 #register 3 sub 1
-01010000 #initialize register 0 to 0
 01001101 #add 1 to register 3
 01001101 #add 1 to register 3
 01001101 #add 1 to register 3
@@ -106,7 +103,7 @@
 00101101 #sub 1 from register 3
 00101101 #sub 1 from register 3
 01000001 #put Register 1 in Register 0
-01111010 #beqR0
+01111100 #beqR0
 01010000 #initialize register 0 to 0
 01001101 #add 1 to register 3
 01001101 #add 1 to register 3
@@ -121,4 +118,24 @@
 01001101 #add 1 to register 3
 01110110 #jump back 2**6 spaces
 
-##################01010000 #initialize register 0 to 0
+01010000 #initialize register 0 to 0
+01001101 #register 3 plus 1
+01001101 #register 3 plus 1
+01001101 #register 3 plus 1
+00000111 #load in the big number from 0x0003
+00101101 #register 3 minus 1
+00101101 #register 3 minus 1
+00101101 #register 3 minus 1
+01001101 #register 3 plus 1
+00001011 #load in 17 from 0x0001
+00101101 #register 3 minus 1
+
+ #mod 17
+00100110 #register 1 minus register 2
+00110110 #slt register 1 < register 2
+01111010 #branch r0 = 0 for 4 spaces
+01110010 #jump 2**2 spaces back
+
+
+
+00010100 #answer is in memory location 0x0001

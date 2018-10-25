@@ -1,14 +1,14 @@
-Instruction Count: 37
+Instruction Count: 11347
 
 Register 0: 0
-Register 1: 0
-Register 2: 6
+Register 1: 8
+Register 2: 17
 Register 3: 0
 
-Address 0: 6
+Address 0: 8
 Address 1: 17
-Address 2: 10
-Address 3: 0
+Address 2: 0
+Address 3: 46656
 Address 4: 0
 Address 5: 0
 Address 6: 0

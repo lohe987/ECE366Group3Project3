@@ -50,6 +50,7 @@ for line in input_file:  # allocate instruction memory
 
 i = 0 #PC
 while i < len(instruction_Memory):
+    print("Instruction Line " + str(i) + ": " + "R[0]->" + str(register[0]) + " " + "R[1]->" + str(register[1]) + " " + "R[2]->" + str(register[2]) + " " + "R[3]->" + str(register[3]) + "\n")
     if (instruction_Memory[i][1:4] == '000'):  # lw
         if(instruction_Memory[i][4:6] == '00'):
             Rx = 0
@@ -186,9 +187,9 @@ while i < len(instruction_Memory):
             else:
                 Ry = 3
             if (register[Rx] < register[Ry]):
-                register[0] = 1
-            else:
                 register[0] = 0
+            else:
+                register[0] = 1
         else:
             if (instruction_Memory[i][4:6] == '00'):
                 Rx = 0
@@ -207,9 +208,9 @@ while i < len(instruction_Memory):
             else:
                 Ry = 3
             if (register[Rx] == register[Ry]):
-                register[0] = 1
-            else:
                 register[0] = 0
+            else:
+                register[0] = 1
 
     elif (instruction_Memory[i][1:4] == '110'):  # xor/and
         first = 0
@@ -292,7 +293,7 @@ while i < len(instruction_Memory):
             elif (instruction_Memory[i][5:8] == '101'):
                 im = 5
             elif (instruction_Memory[i][5:8] == '110'):
-                im = 7
+                im = 6
             else:
                 im = 7
             i = i - 2**im - 1
@@ -310,7 +311,7 @@ while i < len(instruction_Memory):
             elif (instruction_Memory[i][5:8] == '101'):
                 im = 5
             elif (instruction_Memory[i][5:8] == '110'):
-                im = 7
+                im = 6
             else:
                  instruction_Memory[i] = instruction_Memory[i].replace('beqR0 111', 'Halt')
             if (register[0] == 0):
@@ -318,7 +319,7 @@ while i < len(instruction_Memory):
             else:
                 i
     else:
-        print("Unknown instruction:" + instruction_Memory[i])
+        ##############print("Unknown instruction:" + instruction_Memory[i])
         instruction_Count = instruction_Count - 1
     instruction_Count = instruction_Count + 1
     i = i + 1
