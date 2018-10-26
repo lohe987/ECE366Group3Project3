@@ -168,7 +168,7 @@ while i < len(instruction_Memory):
                 im = 3
             register[Rx] = register[Rx] - im
 
-    elif (instruction_Memory[i][1:4] == '011'):  # sltR0/seqR0
+    elif (instruction_Memory[i][1:4] == '011'):  # cmpR0/skipPC
         if(instruction_Memory[i][4:5] == '0'):
             if (instruction_Memory[i][4:6] == '00'):
                 Rx = 0
@@ -188,29 +188,12 @@ while i < len(instruction_Memory):
                 Ry = 3
             if (register[Rx] < register[Ry]):
                 register[0] = 0
+            if (register[Rx] == register[Ry]):
+                register[0] = -1
             else:
                 register[0] = 1
         else:
-            if (instruction_Memory[i][4:6] == '00'):
-                Rx = 0
-            elif (instruction_Memory[i][4:6] == '01'):
-                Rx = 1
-            elif (instruction_Memory[i][4:6] == '10'):
-                Rx = 2
-            else:
-                Rx = 3
-            if (instruction_Memory[i][6:8] == '00'):
-                Ry = 0
-            elif (instruction_Memory[i][6:8] == '01'):
-                Ry = 1
-            elif (instruction_Memory[i][6:8] == '10'):
-                Ry = 2
-            else:
-                Ry = 3
-            if (register[Rx] == register[Ry]):
-                register[0] = 0
-            else:
-                register[0] = 1
+            i = i + 2
 
     elif (instruction_Memory[i][1:4] == '110'):  # xor/and
         first = 0
