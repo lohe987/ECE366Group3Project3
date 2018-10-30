@@ -44,6 +44,31 @@ i = 0;
 while i < (2**16 - 1):  # allocate data memory space
     data_Memory.append(0)
     i = i + 1
+#########################delete when not used
+data_Memory[0] = -5
+data_Memory[1] = 3
+data_Memory[2] = 0
+data_Memory[3] = 1
+data_Memory[4] = -2
+data_Memory[5] = 3
+data_Memory[6] = -4
+data_Memory[7] = 5
+data_Memory[8] = -6
+data_Memory[9] = 7
+data_Memory[10] = -8
+data_Memory[11] = 9
+data_Memory[12] = -10
+data_Memory[13] = -5
+data_Memory[14] = 5
+data_Memory[15] = -5
+data_Memory[16] = 5
+data_Memory[17] = -5
+data_Memory[18] = 1
+data_Memory[19] = -2
+data_Memory[20] = 3
+data_Memory[21] = -4
+data_Memory[22] = 5
+#########################
 
 for line in input_file:  # allocate instruction memory
     instruction_Memory.append(line)
@@ -168,7 +193,7 @@ while i < len(instruction_Memory):
                 im = 3
             register[Rx] = register[Rx] - im
 
-    elif (instruction_Memory[i][1:4] == '011'):  # cmpR0/skipPC
+    elif (instruction_Memory[i][1:4] == '011'):  # sltR0/seqR0
         if(instruction_Memory[i][4:5] == '0'):
             if (instruction_Memory[i][4:6] == '00'):
                 Rx = 0
@@ -188,12 +213,29 @@ while i < len(instruction_Memory):
                 Ry = 3
             if (register[Rx] < register[Ry]):
                 register[0] = 0
-            if (register[Rx] == register[Ry]):
-                register[0] = -1
             else:
                 register[0] = 1
         else:
-            i = i + 2
+            if (instruction_Memory[i][4:6] == '00'):
+                Rx = 0
+            elif (instruction_Memory[i][4:6] == '01'):
+                Rx = 1
+            elif (instruction_Memory[i][4:6] == '10'):
+                Rx = 2
+            else:
+                Rx = 3
+            if (instruction_Memory[i][6:8] == '00'):
+                Ry = 0
+            elif (instruction_Memory[i][6:8] == '01'):
+                Ry = 1
+            elif (instruction_Memory[i][6:8] == '10'):
+                Ry = 2
+            else:
+                Ry = 3
+            if (register[Rx] == register[Ry]):
+                register[0] = 0
+            else:
+                register[0] = 1
 
     elif (instruction_Memory[i][1:4] == '110'):  # xor/and
         first = 0
