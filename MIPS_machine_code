@@ -2383,7 +2383,7 @@ loop2
 00010011 #store r0 back into memory location 1
 00100010 #put r0 back minus 1 to stay with current iteration
 00101101 #reset register 3
-01001101 #set register 3 to 1
+01001101 #set register 3 to 1 could also load in memory location 25
 01001001 #set register 2 to 1
 
 
@@ -2957,7 +2957,7 @@ loop:
 
 
 
-
+else
 01001101
 01001101
 01001101
@@ -3094,8 +3094,8 @@ loop:
 00101001 #subtract 1 from it
 01010000 #reset register 0
 01000010 #put register 2 into register 0
-01111011 #jump 125 spaces
 00011011 #store register 2 inside of memory location 24 after decrement
+01111011 #jump 125 spaces
 01010000 #reset register 0
 00101101
 00101101
@@ -3421,26 +3421,26 @@ else2
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 01001101 #make it 28 safety line
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
