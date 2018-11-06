@@ -6,8 +6,8 @@ Register 2: 2
 Register 3: 5
 
 Address 0: 2
-Address 1: 3
-Address 2: 0
+Address 1: 7
+Address 2: 6
 Address 3: 15
 Address 4: 15
 Address 5: 2
