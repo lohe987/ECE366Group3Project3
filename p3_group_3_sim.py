@@ -57,8 +57,8 @@ for line in input_fileA:
     pattern.append(line)
 print("flag3")
 
-#for line in input_file1:  # allocate instruction memory
-    #instruction_Memory.append(line)
+for line in input_file1:  # allocate instruction memory
+    instruction_Memory.append(line)
 for line in input_file2:
     instruction_Memory.append(line)
 print("flag4")
