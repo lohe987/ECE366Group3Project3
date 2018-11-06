@@ -1,0 +1,354 @@
+01001101 #achieve the number 6
+01001101
+01001101
+01001101
+01001101
+01001101 #register 3 now equals 6
+01001001
+01001001
+01001001
+01001001 #register 2 now equals 4
+00011110 #6 is now in memory location 0x0004
+00101101
+00101101
+00101101
+00101101
+00101101
+00101101 #register 3 equals 0
+00101001
+00101001
+00101001
+00101001 #register 2 equals 0
+00001011 #load in mem[0]
+00101001 #subtract 1 from it
+00011011 #put it back
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+01001101
+01001101
+01001101
+01001101 #register 3 equals memory location 4
+00001011 #pull 6 back out from memory and put it into register 2
+00000011 #set $r0 to 6
+00101101
+00101101
+00101101
+00101101 #register 3 equals 0
+01001101 #add 1 to register 3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#jump location
+01000110 #add 6 to register 1 over and over again
+00100011 #decrement the counter by 1 then 2 then 3. . .
+01111001 #if counter is 0 leave the loop
+01110001 #jump back 5 spaces
+
+
+
+
+
+
+00101101 #register 3 sub 1
+01001101 #register 3 add 1
+01001101 #register 3 add 1
+01001101 #register 3 add 1
+01001101 #register 3 add 1
+01001101 #register 3 add 1 location 5
+00010111 #store product of 6 times larger number in 0x0005
+00101101 #register 3 sub 1
+00101101 #register 3 sub 1
+00101101 #register 3 sub 1
+00101101 #register 3 sub 1
+00101101 #register 3 sub 1 reset register 3
+00000111 #$r1 is now equal to p the power in 0x0000
+01001101 #register 3 add 1
+00100111 #subtract register 3 from register 1
+00101101 #register 3 sub 1 reset register 3
+00010111 #store register 1 modified value back to 0x0000
+#reset
+01001101 #add 1 to register 3
+01001101 #add 1 to register 3
+01001101 #add 1 to register 3
+01001101 #add 1 to register 3
+01001101 #add 1 to register 3
+00001011 #load product of 6 times larger number in 0x0005
+00101101 #sub 1 from register 3
+00101101 #sub 1 from register 3
+00101101 #sub 1 from register 3
+00101101 #sub 1 from register 3
+00101101 #sub 1 from register 3
+01000001 #put Register 1 in Register 0
+01111010 #beqR0
+01010000 #initialize register 0 to 0
+01001101 #add 1 to register 3
+01001101 #add 1 to register 3
+00000111 #load in 0 to register 1 from memory location 0x0002
+00101101 #sub 1 from register 3
+00101101 #sub 1 from register 3 reset register 3
+01001101 #add 1 to register 3
+01001101 #add 1 to register 3
+01001101 #add 1 to register 3
+01001101 #add 1 to register 3
+00000011 #set register 0 equal to 0x0004=6
+00101101 #sub 1 from register 3
+00101101 #sub 1 from register 3
+00101101 #sub 1 from register 3
+00101101 #sub 1 from register 3
+01001101 #add 1 to register 3
+01110011 #jump back 5**3 spaces
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+01001101 #register 3 plus 1
+01001101 #register 3 plus 1
+01001101 #register 3 plus 1
+01001101 #register 3 plus 1
+01001101 #register 3 plus 1
+00000111 #load in the big number from 0x0005
+00101101 #register 3 minus 1
+00101101 #register 3 minus 1
+00101101 #register 3 minus 1
+00101101 #register 3 minus 1
+00101101 #register 3 minus 1
+01001101 #register 3 plus 1
+00001011 #load in Q which is 17 sometimes from 0x0001
+00101101 #register 3 minus 1
+
+
+
+ #mod 17
+00100110 #register 1 minus register 2
+00110110 #slt register 1 < register 2
+01111001 #branch r0 = 0 for 5 spaces
+01110001 #jump 5 spaces back
+
+
+
+
+
+01001101
+01001101
+00010111 #answer is in memory location 0x0002
+00101101
+00101101
+01010000 #reset register 0 to 0
+00101101
+00101101
+00101101
+00101101 #reset register 3
+01001101
+01001101
+01001101
+01001101
+01001101
+01001101
+01001101
+01001101
+01001101
+01001101
+01001101
+01001101
+01001101
+01001101 #go to memory location 14
+01011111 #go to memory location 14 * 8 = 116
+01000011 #make r0 equal to register 3
+01000011 #make r0 equal to twice register 3
+00001100 #will pull from 0s big number memory location and overwrite register 3
+00001000 #will pull from 0s big number memory location and overwrite register 2
+01010000 #reset 0 back to 0
+01010100 #reset 1 back to 0 just in case idk anymore
